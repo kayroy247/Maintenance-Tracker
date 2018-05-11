@@ -1,0 +1,1 @@
+adminvwdetails.js
