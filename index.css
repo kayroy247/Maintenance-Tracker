@@ -1,51 +1,111 @@
-body
-{
-  padding: 30px;
-  background-color: #7FFFD4;
+* {
+    box-sizing: border-box;
 }
-.form
-{
-  margin: 0px auto;
-  width: 300px;
-  height: 300px;
-  background-color: #ccc;
-  border-radius: 3px;
-  position: relative;
-  padding: 45px
 
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #F0F8FF;
 }
-h1
-{
-	display: inline;
-}
-.textinput
-{
- border: 2px solid #73AD21;
-  border-radius: 10px;
-  padding: 5px;
-  Height: 15px;
-  width: 300px;
-  background-color: #F8F8FF;
-  font-size: 16px;
 
-}
-.pass
-{
-	border: 2px solid #73AD21;
-  border-radius: 10px;
-  padding: 5px;
-  Height: 15px;
-  width: 300px;
-  background-color: #F8F8FF;
-  font-size: 16px;
 
+.header {
+    padding: 20px;
+    text-align: center;
+    background: #000026;
+    color: #F8F8FF;
+    
+   
 }
-button
-{
-	 border-radius: 10px;
-  font-size: 20px;
-  background-color: #32CD32;
-  color: GhostWhite;
-  height: 30px;
-  width: 30%;
+
+.header h1 {
+    font-size: 50px;
+}
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #1f9633;
+    border-radius: 4px;
+    box-shadow: 5px 10px #d1dfd3;
+}
+
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+.leftcolumn {   
+    float: left;
+    width: 75%;
+}
+
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f0f8ff;
+    padding-left: 20px;
+}
+
+
+.mainpage {
+  background-image: url("newone.jpg");
+    background-color: blue;
+    width: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+}
+
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #000026;
+    margin-top: 20px;
+    color: white;
+}
+
+
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
 }
