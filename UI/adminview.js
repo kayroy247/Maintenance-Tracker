@@ -1,0 +1,1 @@
+adminview.js
