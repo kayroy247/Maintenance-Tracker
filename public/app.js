@@ -1,1 +1,1 @@
-// This is the file where es6 from src/app.js will be transpiled to es5.
+"use strict";
