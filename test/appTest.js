@@ -1,41 +1,45 @@
+process.env.NODE_ENV = 'test';
 import chai from 'chai';
-import superT from 'supertest';
-import myapp from '../src/app';
+import myapp from '../routers/repairRequestRoutes';
 import { request } from 'http';
+import should from 'chai.should()';
+import chaiHttp from 'chai-Http';
 
 const { expect } = chai.expect;
-const serverControl = superT.agent(myapp);
+
+chai.use(chaiHttp);
 
 
 describe('Maintenance-Tracker Route Tests', () => {
-  describe('GET /users/requests', () => {
+  
     it('Should fetch all the request of a logged in user', function (done) {
-      serverControl
+      chai.request(myapp)
         .get('/api/v1/users/requests')
-          .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
-              .expect(200, done);
+          .end((error, response) => {
+            if (error) return;
+            response.should.have.status(200);
+          });
     });
 });
-  describe('GET /users/requests/<requestId>', () => {
+  
   it('Should fetch a request that belong to a user', function (done) {
-      serverControl
+      chai.request(myapp)
           .get('/api/v1/users/requests/1')
-          .set('Accept', 'application/json')
-          .expect('Content-Type', /json/)
-          .expect(200, done);
+          .end((error, response) => {
+            if (error) return;
+            response.should.have.status(200);
+          });
+          
   });
-});
-describe('GET /users/:invalidId', () => {
+
+describe('GET /users/:noextistingId', () => {
   it('should test non existent id by returning 404', function (done) {
-    serverControl
+    chai.request(myapp)
       .get('/users/v1/requests/1e3')
-        .set('Accept', 'application/json')
-          .expect('Content-Type', "text/html; charset=utf-8")
-            .expect(404)  
-              .end((err) => {
-              if (err) return done(err);
-              done();
+      .end((error, response) => {
+        if (error) return;
+        response.should.have.status(404);
+      });
           });
   });
 });
@@ -47,15 +51,13 @@ describe('POST /users/requests', () => {
       description: 'The car has engine fault',
   }
   it('should Modify a request', (done) => {
-    serverControl
+    chai.request(myapp)
       .put('/api/v1/users/requests/3')
-        .send(newRequest)
-        .set('Accept', 'application/json')
-          .expect('Content-Type', /json/)
-           .expect(200)
-              .end((err) => {
-              if (err) return done(err);
-              done();
+        .send.(newRequest)
+        .end((error, response) => {
+          if (error) return;
+          response.should.have.status(200);
+        });
           });
   });
 });

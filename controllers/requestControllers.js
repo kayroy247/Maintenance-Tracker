@@ -6,7 +6,7 @@
 require('babel-register');
 import Joi from 'joi';
 
-export default class RecipeControllers {
+export default class RequestControllers {
 static requests = [
   {
   userId: 1,
