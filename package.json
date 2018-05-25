@@ -6,7 +6,6 @@
   "scripts": {
     "js": "babel src/app.js --out-file public/app.js",
     "test": "mocha --compilers js:babel-core/register ./test/*.js",
-    "build": "babel src -d lib",
     "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
@@ -32,6 +31,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.12.0",
     "mocha": "^5.1.1",
+    "nodemon": "^1.17.5",
     "request": "^2.86.0",
     "supertest": "^3.1.0"
   },

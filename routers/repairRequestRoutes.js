@@ -3,11 +3,10 @@ import RequestControllers from '../controllers/requestControllers';
 
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 const router = express.Router();
-//app.use(express.json());
 
+router.get('/', RequestControllers.homePageDisplay)
 router.get('/v1/users', RequestControllers.homePageDisplay);
 
 router.get('/v1/users/requests', RequestControllers.getAllRequests);
