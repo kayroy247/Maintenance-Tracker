@@ -2,9 +2,9 @@
   "name": "maintenance-tracker",
   "version": "1.0.0",
   "description": "Serverside Api",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "js": "babel-core/register src/app.js --out-file public/app.js",
+    "js": "babel src/app.js --out-file public/app.js",
     "test": "mocha --compilers js:babel-core/register ./test/*.js"
   },
   "repository": {
