@@ -1,9 +1,9 @@
 import express from 'express';
-import myRoute from './routers/repairRequestRouters';
+import myRoute from './routers/repairRequestRoutes';
 const app = express();
-const port = procee.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 
-app.use('/api/v1/users', myRoute);
+app.use('/api', myRoute);
 
-app.listen(port, (_) => {`listening on ${port}`});
+app.listen(port, () => {console.log(`Listening on ${port}`)});

@@ -1,25 +1,23 @@
 import express from 'express';
 import RequestControllers from '../controllers/requestControllers';
 
-const myRequest = new RequestControllers();
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-const routing = express.Router();
-app.use(express.json());
+const router = express.Router();
+//app.use(express.json());
 
-routing.get('/', myRequest.homePageDisplay());
+router.get('/v1/users', RequestControllers.homePageDisplay);
 
-routing.get('/api/v1/users/requests', myRequest.getAllRequests());
+router.get('/v1/users/requests', RequestControllers.getAllRequests);
 
-routing.get('/api/v1/users/requests/:id',  myRequest.getUserRequests());
+router.get('/v1/users/requests/:id',  RequestControllers.getUserRequests);
 
-routing.post('/api/v1/users/requests',  myRequest.postRequest() );
+router.post('/v1/users/requests',  RequestControllers.postRequest);
 
-routing.put('/api/v1/users/requests/:id',  myRequest.modifyRequest());
+router.put('/v1/users/requests/:id',  RequestControllers.modifyRequest);
 
-routing.delete('/api/v1/users/requests/:id', myRequest.deleteRequest());
+router.delete('/v1/users/requests/:id', RequestControllers.deleteRequest);
 
-routing.listen(port, () => console.log('listening on port 3000'));
-
-export default routing;
+export default router;

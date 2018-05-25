@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "js": "babel src/app.js --out-file public/app.js",
-    "test": "mocha --compilers js:babel-core/register ./test/*.js"
+    "test": "mocha --compilers js:babel-core/register ./test/*.js",
+    "build": "babel src -d lib",
+    "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   },
   "homepage": "https://github.com/kayroy247/Maintenance-Tracker#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.48",
+    "@babel/node": "^7.0.0-beta.48",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
