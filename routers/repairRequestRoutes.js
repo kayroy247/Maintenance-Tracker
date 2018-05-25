@@ -3,10 +3,9 @@ import RequestControllers from '../controllers/requestControllers';
 
 
 const app = express();
-
 const router = express.Router();
 
-router.get('/', RequestControllers.homePageDisplay)
+router.get('/', RequestControllers.homePageDisplay);
 router.get('/v1/users', RequestControllers.homePageDisplay);
 
 router.get('/v1/users/requests', RequestControllers.getAllRequests);
