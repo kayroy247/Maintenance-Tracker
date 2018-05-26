@@ -10,7 +10,7 @@ describe('Maintenance-Tracker Route Tests', () => {
   
     it('Should fetch all the request of a logged in user', function (done) {
       request('/', (err, res) => {
-      res.body.should.have.status(200);
+      res.send().should.have.status(200);
     });
     });
 });
